@@ -1,12 +1,15 @@
 package com.gapnt.formastic.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
 
+import javax.persistence.*;
+
+@Data
+@Entity
+@Table(name = "tb_efetivos")
 public class Efetivo {
+
     @Id
     @Column(name = "efe_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
