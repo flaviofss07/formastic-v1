@@ -37,7 +37,7 @@ public class EfetivoResource {
     public ResponseEntity<Efetivo> cria(@RequestBody Efetivo efetivo, HttpServletResponse response){
         Efetivo e = service.salva(efetivo);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(e.getId()).toUri();
-        response.setHeader("Location", toASCIIString());
+        response.setHeader("Location", uri.toASCIIString());
 
         return ResponseEntity.created(uri).body(e);
     }
