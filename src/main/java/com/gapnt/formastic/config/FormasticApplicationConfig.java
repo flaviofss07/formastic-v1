@@ -5,10 +5,12 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class AsticApplicationConfig implements WebMvcConfigurer {
+public class FormasticApplicationConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry){
-        registry.addMapping("/**").allowedOrigins("https://").allowedMethods("GET", "POST");
+        registry.addMapping("/**")
+                .allowedOrigins("https://")
+                .allowedMethods("GET", "POST");
     }
 }
